@@ -1,9 +1,19 @@
 ---
-import GitHub from "./icons/GitHub.astro"
-import NextJS from "./icons/NextJS.astro"
-import Tailwind from "./icons/Tailwind.astro"
-import Link from "./icons/Link.astro"
-import LinkButton from "./LinkButton.astro"
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Link from "./icons/Link.astro";
+import LinkButton from "./LinkButton.astro";
+import Unity from "./icons/Unity.astro";
+import CSharp from "./icons/CSharp.astro";
+import Html from "./icons/Html.astro";
+import JavaScript from "./icons/JavaScript.astro";
+import Css from "./icons/Css.astro";
+import Laravel from "./icons/Laravel.astro";
+import MySQL from "./icons/MySQL.astro";
+import Linux from "./icons/Linux.astro";
+import Bootstrap from "./icons/Bootstrap.astro";
+import Vue from "./icons/Vue.astro";
 
 const TAGS = {
   NEXT: {
@@ -16,78 +26,152 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
-}
+  UNITY: {
+    name: "Unity",
+    class: "bg-black text-white",
+    icon: Unity,
+  },
+  CSHARP: {
+    name: "C#",
+    class: "bg-[#003159] text-white",
+    icon: CSharp,
+  },
+  HTML: {
+    name: "HTML",
+    class: "bg-[#E34F26] text-white",
+    icon: Html,
+  },
+  JAVASCRIPT: {
+    name: "JavaScript",
+    class: "bg-[#F7DF1E] text-black",
+    icon: JavaScript,
+  },
+  CSS: {
+    name: "CSS",
+    class: "bg-[#1572B6] text-white",
+    icon: Css,
+  },
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-black text-white",
+    icon: Laravel,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-[#4479A1] text-white",
+    icon: MySQL,
+  },
+  LINUX: {
+    name: "Linux",
+    class: "bg-black text-white",
+    icon: Linux,
+  },
+  BOOTSTRAP: {
+    name: "Bootstrap",
+    class: "bg-[#003159] text-white",
+    icon: Bootstrap,
+  },
+  VUE: {
+    name: "Vue.js",
+    class: "bg-[#003159] text-white",
+    icon: Vue,
+  },
+};
 const PROJECTS = [
   {
-    title: "SVGL - A beautiful library with SVG logos",
-    description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    title: "Defensoría UNAMBA - Página Web Institucional",
+    description: "Página web institucional de la Defensoría Universitaria de la Universidad Nacional Micaela Bastidas de Apurímac. Desarrollado en Laravel, Bootstrap y MySQL. Desplegado en un servidor Linux (Debian).",	
+    link: "https://defensoria.unamba.edu.pe/",
+    image: "/projects/website_defensoria_unamba.png",
+    tags: [TAGS.LARAVEL, TAGS.BOOTSTRAP, TAGS.MYSQL, TAGS.LINUX],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
-    description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+    title: "Lara Task - Sistema de Gestión de Tareas",
+    description: "Sistema de gestión de tareas desarrollado en Laravel, Vue.js, Tailwind CSS y MySQL.",	
+    github: "https://github.com/jairmmz/lara-vue-task",
+    image: "/projects/lara-task.jpeg",
+    tags: [TAGS.LARAVEL, TAGS.VUE, TAGS.TAILWIND, TAGS.MYSQL],
   },
-]
+  {
+    title: "Turismo ABC - Página Web de Turismo",
+    description: "Página web de turismo que muestra los lugares turísticos de la región de Apurímac. Desarrollado en HTML y CSS.",
+    link: "https://jairmmz.github.io/apurimactour.github.io/index.html",
+    github: "https://github.com/jairmmz/apurimactour.github.io",
+    image: "/projects/travel_abc.png",
+    tags: [TAGS.HTML, TAGS.CSS],
+  },
+  {
+    title: "SYSTEM POS - Interfaz de Punto de Venta",
+    description: "Interfaz de Punto de venta de productos desarrollado en HTML, CSS y JavaScript.",
+    link: "https://jairmmz.github.io/form-invoice.github.io/",
+    github: "https://github.com/jairmmz/form-invoice.github.io",
+    image: "/projects/invoice_procect.png",
+    tags: [TAGS.HTML, TAGS.CSS, TAGS.JAVASCRIPT],
+  },
+  {
+    title: " Reciclaje AMPAY - Videojuego 3D",
+    description:
+      "Proyecto universitario en el dessarrollo de un videojuego 3D en el recojo de residuos sólidos en el Santuario Nacional el Ampay.",
+    github: "https://github.com/jairmmz/Proyect-Game-3D_AMPAY?tab=readme-ov-file",
+    image: "/projects/reciclaje_ampay.png",
+    tags: [TAGS.UNITY, TAGS.CSHARP],
+  },
+];
 ---
 
 <div class="flex flex-col gap-y-16">
   {
     PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+            <img
+              alt="Recién llegado vs 5 años en Nueva Zelanda"
+              class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
+              loading="lazy"
+              src={image}
+            />
+          </div>
+        </div>
 
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-row mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
 
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">
+              {description}
+            </div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {link && (
+                <LinkButton href={link}>
+                  <Link class="size-4" />
+                  Preview
+                </LinkButton>
+              )}
+            </footer>
+          </div>
+        </div>
+      </article>
     ))
   }
 </div>
-
-
-
